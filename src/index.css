@@ -1,0 +1,94 @@
+.inputs {
+  position: relative;
+  /* border-style: solid; */
+  /* display: inline; */
+  /* top: 250px;
+  left: 100px; */
+  float: right;
+  margin-right: 15px;
+  margin-top: 2px;
+  width: 90%;
+}
+#ipt {
+  padding-right: 10px;
+}
+#hue, #sat, #l {
+  position: relative;
+  display:inline;
+  width: 25%;
+  border-radius: 2px;
+  border-width: 1px;
+  border-color: #F5F5F5;
+}
+.picker {
+  position: absolute;
+  width: 230px;
+  height: 320px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 30px;
+  left: 100px;
+}
+#swatch {
+  margin-left: 15px;
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #F5F5F5;
+}
+.hue {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /* margin: auto; */
+  position: relative;
+  left: 15px;
+  margin-top: 15px;
+  -webkit-appearance: none;
+  width: 200px;
+  height: 13px;
+  /* background: #d3d3d3; */
+  outline: none;
+  border-radius: 2px;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  background:
+  -webkit-gradient(linear, left top, right top,
+    color-stop(0%, #800),
+    color-stop(5%, #f00),
+    color-stop(20%, #ff0),
+    color-stop(35%, #0f0),
+    color-stop(50%, #0ff),
+    color-stop(65%, #00f),
+    color-stop(80%, #f0f),
+    color-stop(95%, #f00),
+    color-stop(100%, #800)
+  );
+}
+.hue::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* appearance: none; */
+  border-style: solid;
+  border-color: white;
+  border-width: 100;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* background: black; */
+  cursor: pointer;
+}
+
+.washHSV {
+  border-radius: 2px;
+  margin: auto;
+  margin-top: 10px;
+  position:relative;
+  width: 200px;
+  height: 200px;
+  background:
+  -webkit-linear-gradient(top,black,transparent),
+  -webkit-linear-gradient(left,white,red);
+}
