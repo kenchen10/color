@@ -40,6 +40,55 @@ class Display extends React.Component {
   }
 }
 
+class Interpolate extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+
+  interpolateColor(color1, color2, factor) {
+    var result = color1.slice();
+    for (var i = 0; i < 3; i++) {
+        result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+    }
+    return result;
+  };
+
+  interpolateColors(color1, color2, steps) {
+    var stepFactor = 1 / (steps - 1);
+    var interpolatedColorArray = [];
+
+    color1 = color1.match(/\d+/g).map(Number);
+    color2 = color2.match(/\d+/g).map(Number);
+
+    for (var i = 0; i < steps; i++) {
+        interpolatedColorArray.push(this.interpolateColor(color1, color2, stepFactor * i));
+    }
+
+    return interpolatedColorArray;
+  }
+
+  render() {
+    let retArr = [];
+    let color1 = "rgb(23, 172, 100)";
+    let color2 = "rgb(131, 12, 22)";
+    let steps = 3;
+    let interpArr = this.interpolateColors(color1, color2, steps);
+    let w = 200 / steps;
+    // let pad = 10;
+    for (let i = 0; i < steps; i++) {
+      retArr.push(<div id="interpolate" key={i} style={{
+        background: `rgb(${interpArr[i][0]}, ${interpArr[i][1]}, ${interpArr[i][2]})`,
+        width: w,
+        // marginRight: `${pad}px`,
+        right: "10px"
+      }}></div>)
+    }
+    return (
+      <div id="interpDiv">{retArr}</div>
+    )
+  }
+}
+
 class Gradient extends React.Component {
   constructor(props) {
     super(props);
@@ -89,6 +138,7 @@ class Gradient extends React.Component {
     return (
       <div>
         <div className='washHSV' style={{background: this.props.washBackground}} onClick={this.pickColorHSV} />
+        <Interpolate/>
         <table>
           <tbody>
             <tr>

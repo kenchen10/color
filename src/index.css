@@ -12,6 +12,22 @@
 #ipt {
   padding-right: 10px;
 }
+#interpDiv {
+  padding-top: 10px;
+  /* width: 100%; */
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* left: 10px; */
+  margin: auto;
+}
+#interpolate {
+  display: inline-flex;
+  height: 20px;
+}
 #hue, #sat, #l {
   position: relative;
   display:inline;
@@ -23,7 +39,7 @@
 .picker {
   position: absolute;
   width: 230px;
-  height: 320px;
+  height: 340px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   top: 30px;
@@ -90,5 +106,5 @@
   height: 200px;
   background:
   -webkit-linear-gradient(top,black,transparent),
-  -webkit-linear-gradient(left,white,red);
+  -webkit-linear-gradient(left,white,orange);
 }
